@@ -1,0 +1,12 @@
+[user]
+	name = David Schmitt
+	email = david@black.co.at
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbzVCyPVmALXIimkxgRuBW/DiSf4Kr/wATzClzz48PILkh4K7IaaR7cyII9r8XhPRtWPPmaTF3yeOUzf+WwxfbATUe9Z3PSryHxXvJBE5l0TzwJ4R2vV6SeAlPYqHa4aotPaZ/RLyVagX2Ebt6/lxQ2ynE5GF8W7RIgwScnG4d0oyUhZm1GcYwegljRI7I1MWjnJpgan6n2BvXoizKRqTlIqLlCWvE0F4t8qHbKvRCq1+D6HB6L8cNYN3yQ1KmAhZ2+4aJpnKe4T15RzSxzMoyqpdrcM3Gd60MBxsjvmeIPHrYVtqJ10ceaOj2M198dvEIW7CKnsR/2ymgmmw0sW6ZfQE/kE3Fm7jJ4XIKS+z4PmPaiy1iS2mkbpNRMGcLBEEh5LCejWyjxxZeEGmSoHyT2u4xf6v55y1SYuGREYKbpjMEoslxeyG7l0vUSaouZIEwY1hCFG4CqNA4RRa+JSirmp11RyrKIzRNSpZqn6IBhfz/YeqGjJrKDPG8gKmbdIU= david@xterm
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[core]
+	editor = code --wait
+[init]
+	defaultBranch = main
