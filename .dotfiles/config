@@ -4,7 +4,7 @@
 	bare = true
 [gui]
 	wmstate = normal
-	geometry = 1436x730+2+46 206 212
+	geometry = 1436x730+2+25 206 212
 [remote "origin"]
 	url = git@github.com:DavidS/dotfiles.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
