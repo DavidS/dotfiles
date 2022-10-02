@@ -121,5 +121,7 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 alias pack="docker run -v /var/run/docker.sock:/var/run/docker.sock  -v $PWD:/workspace -w /workspace buildpacksio/pack"
 
 export DOCKER_BUILDKIT=1
+
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+complete -F _complete_alias config
 
