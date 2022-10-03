@@ -1,0 +1,8 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[hostname]
+ssh_only = false
+
+[username]
+show_always = true

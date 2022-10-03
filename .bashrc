@@ -74,7 +74,36 @@ fi
 . "$HOME/.cargo/env"
 
 # https://starship.rs/
+# title config based off https://stackoverflow.com/a/71467884/4918
+function set_win_title() {
+local cmd=" ($@)"
+if [[ "$cmd" == " (starship_precmd)" || "$cmd" == " ()" ]]
+then
+    cmd=""
+fi
+if [[ $PWD == $HOME ]]
+then
+    if [[ $SSH_TTY ]]
+    then
+    echo -ne "\033]0; 🏛️ @ $HOSTNAME ~$cmd\a" < /dev/null
+    else
+    echo -ne "\033]0; 🏠 ~$cmd\a" < /dev/null
+    fi
+else
+    BASEPWD=$(basename "$PWD")
+    if [[ $SSH_TTY ]]
+    then
+    echo -ne "\033]0; 🌩️ $BASEPWD @ $HOSTNAME $cmd\a" < /dev/null
+    else
+    # echo -ne "\033]0; 📁 $BASEPWD $cmd\a" < /dev/null
+    echo -ne "\033]0; 👁️ $BASEPWD $cmd\a" < /dev/null
+    fi
+fi
+
+}
+starship_precmd_user_func="set_win_title"
 eval "$(starship init bash)"
+trap "$(trap -p DEBUG |  awk -F"'" '{print $2}');set_win_title \${BASH_COMMAND}" DEBUG
 
 # https://fly.io/docs/hands-on/install-flyctl/
 export FLYCTL_INSTALL="/home/david/.fly"
