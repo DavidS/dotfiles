@@ -3,6 +3,7 @@
 	filemode = true
 	bare = true
 [gui]
+	displayuntracked = false
 	wmstate = normal
 	geometry = 1436x730+2+25 206 212
 [remote "origin"]

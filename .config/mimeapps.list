@@ -1,3 +1,8 @@
+[Default Applications]
+test/rust=code.desktop
+
 [Added Associations]
 inode/directory=code.desktop;
-application/vnd.debian.binary-package=gnome-software-local-file.desktop;
+text/xml=code.desktop;
+
+[Removed Associations]
