@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xrandr --output DP-0.8 --auto --output DP-0.1.8 --auto --primary --right-of DP-0.8 --output DP-0.1.1 --auto --rotate right --right-of DP-0.1.8
+

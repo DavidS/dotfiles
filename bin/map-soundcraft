@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo disabled
+exit 0
+
+pactl load-module module-remap-source \
+  master=alsa_input.usb-Soundcraft_Notepad-8FX-00.iec958-stereo \
+  source_name=soundcraft_channel_1 \
+  master_channel_map=front-left channel_map=center
+
+pactl update-source-proplist soundcraft_channel_1 'device.description="Notepad-8FX Channel 1"'
+
+pactl set-default-source soundcraft_channel_1
+
+pactl load-module module-remap-source \
+  master=alsa_input.usb-Soundcraft_Notepad-8FX-00.iec958-stereo \
+  source_name=soundcraft_channel_2 \
+  master_channel_map=front-right channel_map=center
+
+pactl update-source-proplist soundcraft_channel_2 'device.description="Notepad-8FX Channel 2"'
