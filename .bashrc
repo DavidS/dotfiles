@@ -95,8 +95,7 @@ else
     then
     echo -ne "\033]0; 🌩️ $BASEPWD @ $HOSTNAME $cmd\a" < /dev/null
     else
-    # echo -ne "\033]0; 📁 $BASEPWD $cmd\a" < /dev/null
-    echo -ne "\033]0; 👁️ $BASEPWD $cmd\a" < /dev/null
+    echo -ne "\033]0; 📁 $BASEPWD $cmd\a" < /dev/null
     fi
 fi
 
@@ -124,3 +123,9 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
+
+DEBEMAIL="david@black.co.at"
+DEBFULLNAME="David Schmitt"
+CHROOT=debcargo-testing-amd64-sbuild
+export DEBEMAIL DEBFULLNAME CHROOT
+export QUILT_PATCHES=debian/patches
