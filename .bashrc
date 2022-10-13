@@ -124,8 +124,12 @@ if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
 
+# for debcargo
 DEBEMAIL="david@black.co.at"
 DEBFULLNAME="David Schmitt"
 CHROOT=debcargo-testing-amd64-sbuild
 export DEBEMAIL DEBFULLNAME CHROOT
 export QUILT_PATCHES=debian/patches
+
+# allow josm to run under wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
