@@ -195,7 +195,7 @@ exec exec swayidle -w \
 # bindsym $mod+r mode "resize"
 
 # run menu app
-bindsym $mod+r exec wofi --show run\,drun
+bindsym $mod+r exec wofi --show drun\,run
 
 # Reload the configuration file
 bindsym $mod+Shift+r reload
