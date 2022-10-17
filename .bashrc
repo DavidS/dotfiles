@@ -70,6 +70,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# load cargo environment before starfish
+. "$HOME/.cargo/env"
+
 # https://starship.rs/
 # title config based off https://stackoverflow.com/a/71467884/4918
 function set_win_title() {
