@@ -10,6 +10,7 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
+text/x-python=code.desktop
 
 [Added Associations]
 inode/directory=code.desktop;
@@ -24,5 +25,13 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
-
-[Removed Associations]
+image/png=gnome-paint.desktop;org.gnome.eog.desktop;gimp.desktop;
+application/x-shellscript=code.desktop;
+image/jpeg=gimp.desktop;org.gnome.eog.desktop;gnome-paint.desktop;
+text/csv=libreoffice-calc.desktop;code.desktop;
+text/plain=code.desktop;
+application/pdf=org.gnome.Evince.desktop;
+text/x-csrc=code.desktop;
+application/xml=code.desktop;
+image/svg+xml=org.gnome.eog.desktop;
+image/tiff=gnome-paint.desktop;

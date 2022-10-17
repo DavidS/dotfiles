@@ -1,3 +1,8 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
 	name = David Schmitt
 	email = david@black.co.at
@@ -12,6 +17,10 @@
 [gui]
 	fontui = -family \"DejaVu Sans\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"Fira Code\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [init]
 	defaultBranch = main
 [pull]
