@@ -70,6 +70,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# set PATH so it includes go's bin if it exists
+if [ -d "/usr/local/go/bin" ] ; then
+    PATH="$PATH:/usr/local/go/bin"
+fi
+
 # load cargo environment before starfish
 . "$HOME/.cargo/env"
 
