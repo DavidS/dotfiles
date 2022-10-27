@@ -5,7 +5,7 @@
 [gui]
 	displayuntracked = false
 	wmstate = normal
-	geometry = 1436x730+2+25 206 212
+	geometry = 1196x891+5120+970 356 222
 [remote "origin"]
 	url = git@github.com:DavidS/dotfiles.git
 	fetch = +refs/heads/*:refs/remotes/origin/*

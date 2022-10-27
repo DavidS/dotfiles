@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=1000000
+HISTFILESIZE=2000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -70,43 +70,45 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Cargo
+# load cargo environment before starfish
 . "$HOME/.cargo/env"
 
 # https://starship.rs/
 # title config based off https://stackoverflow.com/a/71467884/4918
 function set_win_title() {
-local cmd=" ($@)"
-if [[ "$cmd" == " (starship_precmd)" || "$cmd" == " ()" ]]
-then
-    cmd=""
-fi
-if [[ $PWD == $HOME ]]
-then
-    if [[ $SSH_TTY ]]
-    then
-    echo -ne "\033]0; 🏛️ @ $HOSTNAME ~$cmd\a" < /dev/null
-    else
-    echo -ne "\033]0; 🏠 ~$cmd\a" < /dev/null
-    fi
-else
-    BASEPWD=$(basename "$PWD")
-    if [[ $SSH_TTY ]]
-    then
-    echo -ne "\033]0; 🌩️ $BASEPWD @ $HOSTNAME $cmd\a" < /dev/null
-    else
-    echo -ne "\033]0; 📁 $BASEPWD $cmd\a" < /dev/null
-    fi
-fi
-
+  local cmd=" ($@)"
+  if [[ "$cmd" == " (starship_precmd)" || "$cmd" == " ()" ]]
+  then
+      cmd=""
+  fi
+  if [[ $PWD == $HOME ]]
+  then
+      if [[ $SSH_TTY ]]
+      then
+      echo -ne "\033]0; 🏛️ @ $HOSTNAME ~$cmd\a" < /dev/null
+      else
+      echo -ne "\033]0; 🏠 ~$cmd\a" < /dev/null
+      fi
+  else
+      BASEPWD=$(basename "$PWD")
+      if [[ $SSH_TTY ]]
+      then
+      echo -ne "\033]0; 🌩️ $BASEPWD @ $HOSTNAME $cmd\a" < /dev/null
+      else
+      echo -ne "\033]0; 📁 $BASEPWD $cmd\a" < /dev/null
+      fi
+  fi
 }
+
 starship_precmd_user_func="set_win_title"
 eval "$(starship init bash)"
 trap "$(trap -p DEBUG |  awk -F"'" '{print $2}');set_win_title \${BASH_COMMAND}" DEBUG
 
 # https://fly.io/docs/hands-on/install-flyctl/
-export FLYCTL_INSTALL="/home/david/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
+if [ -d "$HOME/.fly" ]; then
+  export FLYCTL_INSTALL="$HOME/.fly"
+  export PATH="$FLYCTL_INSTALL/bin:$PATH"
+fi
 
 # Use VSCode by default
 export EDITOR="code --wait"

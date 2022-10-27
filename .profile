@@ -30,10 +30,3 @@ fi
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
 fi
-
-. "$HOME/.cargo/env"
-
-# set PATH so it includes go's bin if it exists
-if [ -d "/usr/local/go/bin" ] ; then
-    PATH="$PATH:/usr/local/go/bin"
-fi

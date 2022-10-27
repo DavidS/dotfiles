@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in /dev/video*; do
+	v4l2-ctl -d $i --set-ctrl white_balance_automatic=0
+	sleep .1
+	v4l2-ctl -d $i --set-ctrl white_balance_temperature=4900
+	sleep .1
+done
