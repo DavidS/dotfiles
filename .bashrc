@@ -140,3 +140,4 @@ export QUILT_PATCHES=debian/patches
 
 # allow josm to run under wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
+export XDG_SCREENSHOTS_DIR=/home/david/Pictures/Screenshots
