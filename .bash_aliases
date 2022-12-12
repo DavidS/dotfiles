@@ -18,3 +18,8 @@ function clone() { hub clone $1/$2; cd $2; hub remote rename origin upstream; hu
 # Thanks, davinci resolve :eyeroll:
 function unpack_mov() { ffmpeg -i "$1" -codec:v copy -codec:a pcm_s32le "${1%%.mp4}.mov" && rm "$1" ; }
 function repack_mp4() { ffmpeg -i "$1" -codec:v copy -codec:a aac "${1%%.mov}.mp4" && rm "$1" ; }
+
+# for root
+# apt update && (apt install -t unstable -V -y code firefox || echo -e '\n=== skipping selective upgrade ===\n') && apt -dy full-upgrade && apt full-upgrade -V && apt autoremove --purge
+
+
